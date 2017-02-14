@@ -14,7 +14,7 @@ import com.sevenchildren.framework.util.GenerateUtil;
 public class Des3 {
 
 	public static void main(String[] args) {
-		String yz = GenerateUtil.getRandomStr(5);// 添加延值
+		String yz = GenerateUtil.getRandomStr(5);// 添加延值 
 		Long time = 1471957578L;
 
 		int index = Integer.valueOf(time.toString().substring(time.toString().length() - 1));
