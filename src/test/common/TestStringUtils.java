@@ -1,6 +1,5 @@
 package test.common;
 
-import org.apache.commons.lang.StringUtils;
 
 import com.sevenchildren.framework.util.URLCoderUtil;
 

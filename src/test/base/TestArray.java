@@ -1,7 +1,6 @@
 package test.base;
 
-import java.lang.imitatestring.ImitateString;
-
+import imitate.string.ImitateString;
 /**
  * @Title: TestArray.java
  * @Package test.base
@@ -55,7 +54,7 @@ public class TestArray {
 		char[] dest = new char[length];
 		int destPos = 0;// 目的数组放置的起始位置
 		// t1();
-		// 系统自带数组复制方法，其内部实现非java编写
+		//系统自带数组复制方法，其内部实现非java编写
 		System.arraycopy(src, srcPos, dest, destPos, length);
 		ImitateString su = new ImitateString(dest);
 		System.out.println(su.toString());

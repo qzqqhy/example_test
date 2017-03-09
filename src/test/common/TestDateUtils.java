@@ -1,8 +1,8 @@
 package test.common;
 
-import java.util.Date;
+import test.util.DateUtils;
 
-import com.sevenchildren.framework.util.DateUtils;
+
 
 /**
  * @Title: TestDateUtils.java
@@ -18,8 +18,8 @@ public class TestDateUtils extends BaseTest {
 	public static void main(String[] args) {
 		String dStr = DateUtils.formatDate(1770532705000L);
 		System.out.println(dStr);
-		System.out.println(DateUtils.formatUnixDateMis("2016-06-21 11:33:44", "yyyy-MM-dd HH:mm:ss"));
-		System.out.println(DateUtils.getUnixTimeMis() + " " + new Date().getTime());
+//		System.out.println(DateUtils.formatUnixDateMis("2016-06-21 11:33:44", "yyyy-MM-dd HH:mm:ss"));
+//		System.out.println(DateUtils.getUnixTimeMis() + " " + new Date().getTime());
 	}
 
 }

@@ -1,15 +1,14 @@
 package test.des3;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.security.MessageDigest;
+import test.util.SecurityUtil;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-
-import com.viewhigh.framework.util.SecurityUtil;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.security.MessageDigest;
 
 public class Des3Util extends SecurityUtil {
 
@@ -90,6 +89,8 @@ public class Des3Util extends SecurityUtil {
 		}
 		return null;
 	}
+
+
 
 	/**
 	 * URLEncoder.encode( 加密 Base64（3DES（消息体））)

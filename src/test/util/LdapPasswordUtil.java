@@ -1,13 +1,11 @@
 package test.util;
 
+import org.apache.commons.codec.binary.Base64;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Random;
-
-import org.apache.commons.codec.binary.Base64;
-
-import com.viewhigh.framework.common.log.LogUtils;
 
 public class LdapPasswordUtil {
 
@@ -112,7 +110,7 @@ public class LdapPasswordUtil {
 			// 返回校验结果
 			return MessageDigest.isEqual(shacode, inputpwbyte);
 		} catch (Exception e) {
-			LogUtils.error("LdapPasswordUtil verify", e);
+//			LogUtils.error("LdapPasswordUtil verify", e);
 		}
 		return false;
 	}

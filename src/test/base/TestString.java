@@ -18,6 +18,18 @@ public class TestString {
 		String str = new String(codePoints, offset, count);
 
 		System.out.println(imstr);
+		
+		String str1 = "a";
+		 String str2 = "b";
+		 String str3 = "ab";
+		String str31 = "ab";
+		String str4 = (str1 + str2).toString();
+		 String str5 = new String("ab");
+		  
+		 System.out.println(str5.equals(str3));
+		 System.out.println(str5 == str3);
+		System.out.println(str5.intern() == str31);
+		System.out.println(str5.intern() == str4);
 	}
 
 	// 替换字符
