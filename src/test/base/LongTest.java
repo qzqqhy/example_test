@@ -12,8 +12,8 @@ package test.base;
 public class LongTest {
 
 	public static void main(String[] args) {
-		Long a = 222222L;
-		Long b = 222222L;
+		Long a = 127L;// -128 127 有效值范围
+		Long b = 127L;
 		long c = 33333;
 		long d = 33333;
 		System.out.println(a == b);

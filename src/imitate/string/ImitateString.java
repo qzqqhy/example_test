@@ -21,6 +21,10 @@ public class ImitateString implements java.io.Serializable {
 			desc(value, offset, count);
 		}
 	}
+	public int indexOf(int ch, int fromIndex) {
+
+		return 0;
+	}
 
 	public ImitateString(int[] codePoints, int offset, int count) {
 		if (codePoints == null) {

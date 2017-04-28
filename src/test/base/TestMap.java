@@ -1,8 +1,6 @@
 package test.base;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @Title: LongTest.java
@@ -17,14 +15,41 @@ public class TestMap {
 
 	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
 		Map<String, Object> map = new HashMap<>();
-		map.put("1", "2");
-		map.containsKey("1");
-		String[] uids = new String[map.size()];
-		map.keySet().toArray(uids);
-		System.out.println(uids[0]);
+//		map.put("1", "2");
+        String[] uids = new String[map.size()];
+        map.values().toArray(uids);
+
+		if (!map.containsKey("2")) {
+			int pageIndex = 0;
+			if (!map.isEmpty()) {
+				String[] vals = new String[map.values().size()];
+				map.values().toArray(vals);
+				pageIndex = Integer.valueOf(vals[0]);
+			}
+			System.out.print(pageIndex);
+		}
+//        System.out.println(Integer.valueOf(uids[0]));
+
+//		getField(new test.bean.User());
+//		String[] vals = new String[hash.values().size()];
+//		hash.values().toArray(vals);
+//		pageIndex = Integer.valueOf(vals[0]);
 
 	}
 
+    /**
+     * 循环遍历map
+     * 推荐使用 map.entrySet()
+     * @param map
+     */
+	private static void whileMap(Map map){
+        Set<Map.Entry<String, Object>> entries = map.entrySet();
+        Iterator<Map.Entry<String, Object>> iterator = entries.iterator();
+        while (iterator.hasNext()){
+            Map.Entry<String, Object> next = iterator.next();
+            System.out.println("key:"+next.getKey()+" value:"+next.getValue());
+        }
+    }
 	private static void getField(Object model) throws IllegalArgumentException, IllegalAccessException {
 		java.lang.reflect.Field[] fields = model.getClass().getDeclaredFields();
 		for (java.lang.reflect.Field f : fields) {
@@ -72,7 +97,6 @@ public class TestMap {
 		mapt.put(key, mapo);
 		return mapt;
 	}
-
 	static class User {
 		private Integer id;
 		private String[] gorps;

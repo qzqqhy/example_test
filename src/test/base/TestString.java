@@ -6,6 +6,17 @@ import imitate.string.SoftTypeEnum;
 public class TestString {
 
 	public static void main(String[] args) {
+		String tt="123456abcdef";
+//		System.out.print((char)(Character.MIN_SUPPLEMENTARY_CODE_POINT));
+//		tt.index
+		char result[] = new char[tt.length()];
+		System.out.println(tt);
+		tt instanceof  ? (() tt) : null;
+//		System.arraycopy(value, 0, result, 0, value.length);
+//		return result;
+		System.out.print(1);
+	}
+	private static void t4(){
 		String s1 = "天苍苍野茫茫，胡狼无影鼠猖狂";
 		char[] cs = s1.toCharArray();
 		int[] codePoints = new int[s1.length()];
@@ -18,20 +29,19 @@ public class TestString {
 		String str = new String(codePoints, offset, count);
 
 		System.out.println(imstr);
-		
+
 		String str1 = "a";
-		 String str2 = "b";
-		 String str3 = "ab";
+		String str2 = "b";
+		String str3 = "ab";
 		String str31 = "ab";
 		String str4 = (str1 + str2).toString();
-		 String str5 = new String("ab");
-		  
-		 System.out.println(str5.equals(str3));
-		 System.out.println(str5 == str3);
+		String str5 = new String("ab");
+
+		System.out.println(str5.equals(str3));
+		System.out.println(str5 == str3);
 		System.out.println(str5.intern() == str31);
 		System.out.println(str5.intern() == str4);
 	}
-
 	// 替换字符
 	private static void t3() {
 		String str = "\r\n fd\r\nkl";
@@ -53,5 +63,6 @@ public class TestString {
 		String t1 = "flsakjdfle11?111";
 		System.out.println(t1.substring(0, t1.indexOf("?")));
 	}
+
 
 }
