@@ -1,0 +1,19 @@
+package adc.struct.template;
+/**   下模板方法模式，就是指：一个抽象类中，有一个主方法可以是抽象的，也可以是实际的方法，定义一个类，继承该抽象类，重写抽象方法，通过调用抽象类，实现对子类的调用
+* @Title: AbstractCalculator.java 
+* @Package adc.struct.template 
+* @Description: TODO(用一句话描述该文件做什么) 
+* @author shiwenlong   
+* @date 2017年5月11日 下午5:30:33 
+* @version V1.0   
+*/
+public abstract class AbstractP {
+    /*被子类重写的方法*/  
+    public abstract Class getTClass();
+    
+    public void getClassName(){
+        System.out.println(getTClass().getName());
+    }
+      
+}
+

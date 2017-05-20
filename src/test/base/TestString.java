@@ -11,7 +11,7 @@ public class TestString {
 //		tt.index
 		char result[] = new char[tt.length()];
 		System.out.println(tt);
-		tt instanceof  ? (() tt) : null;
+
 //		System.arraycopy(value, 0, result, 0, value.length);
 //		return result;
 		System.out.print(1);
