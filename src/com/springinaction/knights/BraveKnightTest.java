@@ -8,10 +8,10 @@ import org.junit.Test;
 public class BraveKnightTest {
 
     @Test
-    public void knightShouldEmbarkOnQuest(){
-        Quest mockQuest=mock(Quest.class);
+    public void knightShouldEmbarkOnQuest() {
+        Quest mockQuest = mock(Quest.class);
 
-        BraveKnight knight=new BraveKnight(mockQuest);
+        BraveKnight knight = new BraveKnight(mockQuest);
 
         knight.embarkOnQuest();
 
@@ -20,13 +20,13 @@ public class BraveKnightTest {
 
 
     private Quest mock(Class<Quest> questClass) {
-       return questClass.cast(
-               new Quest() {
-                   @Override
-                   public void embark() {
-                       System.out.print("计划开始");
-                   }
-               }
-       );
+        return questClass.cast(
+                new Quest() {
+                    @Override
+                    public void embark() {
+                        System.out.print("计划开始");
+                    }
+                }
+        );
     }
 }

@@ -1,13 +1,13 @@
 package test.thread;
 
 /**
+ * @author zhongqiang.qiu
+ * @version V1.0
  * @Title: ThreadTest.java
  * @Package test.thread
  * @Description: TODO(用一句话描述该文件做什么)
- * @author zhongqiang.qiu
  * @Company www.viewhigh.com
  * @date 2016年6月27日 下午1:49:58
- * @version V1.0
  */
 public class ThreadTest {
 

@@ -9,18 +9,18 @@ import java.util.List;
 import test.dynamic.proxy.UserService;
 
 /**
+ * @author zhongqiang.qiu
+ * @version V1.0
  * @Title: TestClassUtils.java
  * @Package test.common
  * @Description: 类 工具
- * @author zhongqiang.qiu
  * @Company www.viewhigh.com
  * @date 2016年7月5日 下午3:13:41
- * @version V1.0
  */
-public class TestClassUtils extends BaseTest{
+public class TestClassUtils extends BaseTest {
 
     public static void main(String[] args) throws ClassNotFoundException, IOException {
-        List<Class<?>> classes  = getAllAssignedClass(UserService.class);
+        List<Class<?>> classes = getAllAssignedClass(UserService.class);
         for (Class<?> class1 : classes) {
             System.out.println(class1);
         }
@@ -28,7 +28,7 @@ public class TestClassUtils extends BaseTest{
 
     /**
      * 获取同一路径下 ,所有子类或接口实现类
-     * 
+     *
      * @param intf
      * @return
      * @throws IOException
@@ -46,7 +46,7 @@ public class TestClassUtils extends BaseTest{
 
     /**
      * 取得当前类路径下的所有类
-     * 
+     *
      * @param cls
      * @return
      * @throws IOException
@@ -62,7 +62,7 @@ public class TestClassUtils extends BaseTest{
 
     /**
      * 迭代查找类
-     * 
+     *
      * @param dir
      * @param pk
      * @return

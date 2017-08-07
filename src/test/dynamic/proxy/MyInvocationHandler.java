@@ -5,13 +5,13 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
+ * @author zhongqiang.qiu
+ * @version V1.0
  * @Title: MyInvocationHandler.java
  * @Package test.dynamic.proxy
  * @Description: 实现自己的InvocationHandler
- * @author zhongqiang.qiu
  * @Company www.viewhigh.com
  * @date 2016年6月27日 上午11:03:53
- * @version V1.0
  */
 public class MyInvocationHandler implements InvocationHandler {
     // 目标对象
@@ -19,7 +19,7 @@ public class MyInvocationHandler implements InvocationHandler {
 
     /**
      * 构造方法
-     * 
+     *
      * @param target 目标对象
      */
     public MyInvocationHandler(Object target) {
@@ -38,7 +38,7 @@ public class MyInvocationHandler implements InvocationHandler {
 
     /**
      * 获取目标对象的代理对象
-     * 
+     *
      * @return 代理对象
      */
     public Object getProxy() {

@@ -7,18 +7,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
+ * @author zhongqiang.qiu
+ * @version V1.0
  * @Title: DBUtils.java
  * @Package test.jdbc
  * @Description: TODO(用一句话描述该文件做什么)
- * @author zhongqiang.qiu
  * @Company www.viewhigh.com
  * @date 2016年7月6日 下午7:08:16
- * @version V1.0
  */
 public class DBUtils {
-    private static String url = "jdbc:mysql://localhost:3306/test?characterEncoding=utf8";
+    private static String url = "jdbc:mysql://rm-2zea3kd81a8o6kg6ho.mysql.rds.aliyuncs.com:3306/yzmm?characterEncoding=utf8";
     private static String user = "root";
-    private static String psw = "root";
+    private static String psw = "Sevenkids123";
 
     private static Connection conn;
 
@@ -37,7 +37,7 @@ public class DBUtils {
 
     /**
      * 获取数据库的连接
-     * 
+     *
      * @return conn
      */
     public static Connection getConnection() {
@@ -54,7 +54,7 @@ public class DBUtils {
 
     /**
      * 释放资源
-     * 
+     *
      * @param conn
      * @param pstmt
      * @param rs

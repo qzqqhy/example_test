@@ -1,11 +1,5 @@
 package test.util;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Iterator;
-
 import org.apache.poi.POITextExtractor;
 import org.apache.poi.extractor.ExtractorFactory;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -20,202 +14,203 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.xmlbeans.XmlException;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Iterator;
+
 public class ReadExcel {
 
-	/**
-	 * 
-	 * 读取office 2003 xls
-	 * 
-	 * @param filePath
-	 * 
-	 */
 
-	@SuppressWarnings({ "unchecked", "deprecation" })
+    /**
+     * 读取office 2003 xls
+     *
+     * @param filePath
+     */
 
-	public void loadXls(String filePath) {
+    @SuppressWarnings({"unchecked", "deprecation"})
 
-		try {
+    public static void loadXls(String filePath) {
 
-			InputStream input = new FileInputStream(filePath);
+        try {
 
-			POIFSFileSystem fs = new POIFSFileSystem(input);
+            InputStream input = new FileInputStream(filePath);
 
-			HSSFWorkbook wb = new HSSFWorkbook(fs);
+            POIFSFileSystem fs = new POIFSFileSystem(input);
 
-			HSSFSheet sheet = wb.getSheetAt(0);
+            HSSFWorkbook wb = new HSSFWorkbook(fs);
 
-			// Iterate over each row in the sheet
+            HSSFSheet sheet = wb.getSheetAt(0);
 
-			Iterator rows = sheet.rowIterator();
+            // Iterate over each row in the sheet
 
-			while (rows.hasNext()) {
+            Iterator rows = sheet.rowIterator();
 
-				HSSFRow row = (HSSFRow) rows.next();
+            while (rows.hasNext()) {
 
-				System.out.println("Row #" + row.getRowNum());
+                HSSFRow row = (HSSFRow) rows.next();
 
-				// Iterate over each cell in the row and print out the cell"s
+                System.out.println("Row #" + row.getRowNum());
 
-				// content
+                // Iterate over each cell in the row and print out the cell"s
 
-				Iterator cells = row.cellIterator();
+                // content
 
-				while (cells.hasNext()) {
+                Iterator cells = row.cellIterator();
 
-					HSSFCell cell = (HSSFCell) cells.next();
+                while (cells.hasNext()) {
 
-					System.out.println("Cell #" + cell.getCellNum());
+                    HSSFCell cell = (HSSFCell) cells.next();
 
-					switch (cell.getCellType()) {
+                    System.out.println("Cell #" + cell.getCellNum());
 
-					case HSSFCell.CELL_TYPE_NUMERIC:
+                    switch (cell.getCellType()) {
 
-						System.out.println(cell.getNumericCellValue());
+                        case HSSFCell.CELL_TYPE_NUMERIC:
 
-						break;
+                            System.out.println(cell.getNumericCellValue());
 
-					case HSSFCell.CELL_TYPE_STRING:
+                            break;
 
-						System.out.println(cell.getStringCellValue());
+                        case HSSFCell.CELL_TYPE_STRING:
 
-						break;
+                            System.out.println(cell.getStringCellValue());
 
-					case HSSFCell.CELL_TYPE_BOOLEAN:
+                            break;
 
-						System.out.println(cell.getBooleanCellValue());
+                        case HSSFCell.CELL_TYPE_BOOLEAN:
 
-						break;
+                            System.out.println(cell.getBooleanCellValue());
 
-					case HSSFCell.CELL_TYPE_FORMULA:
+                            break;
 
-						System.out.println(cell.getCellFormula());
+                        case HSSFCell.CELL_TYPE_FORMULA:
 
-						break;
+                            System.out.println(cell.getCellFormula());
 
-					default:
+                            break;
 
-						System.out.println("unsuported sell type");
+                        default:
 
-						break;
+                            System.out.println("unsuported sell type");
 
-					}
+                            break;
 
-				}
+                    }
 
-			}
+                }
 
-		} catch (IOException ex) {
+            }
 
-			ex.printStackTrace();
+        } catch (IOException ex) {
 
-		}
+            ex.printStackTrace();
 
-	}
+        }
 
-	/**
-	 * 
-	 * 读取xlsx文本
-	 * 
-	 * @param filePath
-	 * 
-	 */
+    }
 
-	public void loadXlsxText(String filePath) {
+    /**
+     * 读取xlsx文本
+     *
+     * @param filePath
+     */
 
-		File inputFile = new File(filePath);
+    public void loadXlsxText(String filePath) {
 
-		try {
+        File inputFile = new File(filePath);
 
-			POITextExtractor extractor = ExtractorFactory.createExtractor(inputFile);
+        try {
 
-			System.out.println(extractor.getText());
+            POITextExtractor extractor = ExtractorFactory.createExtractor(inputFile);
 
-		} catch (InvalidFormatException e) {
+            System.out.println(extractor.getText());
 
-			e.printStackTrace();
+        } catch (InvalidFormatException e) {
 
-		} catch (IOException e) {
+            e.printStackTrace();
 
-			e.printStackTrace();
+        } catch (IOException e) {
 
-		} catch (OpenXML4JException e) {
+            e.printStackTrace();
 
-			e.printStackTrace();
+        } catch (OpenXML4JException e) {
 
-		} catch (XmlException e) {
+            e.printStackTrace();
 
-			e.printStackTrace();
+        } catch (XmlException e) {
 
-		}
+            e.printStackTrace();
 
-	}
+        }
 
-	/**
-	 * 
-	 * 读取office 2007 xlsx
-	 * 
-	 * @param filePath
-	 * 
-	 */
+    }
 
-	public void loadXlsx(String filePath) {
+    /**
+     * 读取office 2007 xlsx
+     *
+     * @param filePath
+     */
 
-		// 构造 XSSFWorkbook 对象，strPath 传入文件路径
+    public  static void loadXlsx(String filePath) {
 
-		XSSFWorkbook xwb = null;
+        // 构造 XSSFWorkbook 对象，strPath 传入文件路径
 
-		try {
+        XSSFWorkbook xwb = null;
 
-			xwb = new XSSFWorkbook(filePath);
+        try {
 
-		} catch (IOException e) {
+            xwb = new XSSFWorkbook(filePath);
 
-			System.out.println("读取文件出错");
+        } catch (IOException e) {
 
-			e.printStackTrace();
+            System.out.println("读取文件出错");
 
-		}
+            e.printStackTrace();
 
-		// 读取第一章表格内容
+        }
 
-		XSSFSheet sheet = xwb.getSheetAt(0);
+        // 读取第一章表格内容
 
-		xwb.getSheetAt(1);
+        XSSFSheet sheet = xwb.getSheetAt(0);
 
-		// 定义 row、cell
+        xwb.getSheetAt(1);
 
-		XSSFRow row;
+        // 定义 row、cell
 
-		String cell;
+        XSSFRow row;
 
-		// 循环输出表格中的内容
+        String cell;
 
-		for (int i = sheet.getFirstRowNum(); i < sheet.getPhysicalNumberOfRows(); i++) {
+        // 循环输出表格中的内容
 
-			row = sheet.getRow(i);
+        for (int i = sheet.getFirstRowNum(); i < sheet.getPhysicalNumberOfRows(); i++) {
 
-			for (int j = row.getFirstCellNum(); j < row.getPhysicalNumberOfCells(); j++) {
+            row = sheet.getRow(i);
 
-				// 通过 row.getCell(j).toString() 获取单元格内容，
+            for (int j = row.getFirstCellNum(); j < row.getPhysicalNumberOfCells(); j++) {
 
-				cell = row.getCell(j).toString();
+                // 通过 row.getCell(j).toString() 获取单元格内容，
 
-				System.out.print(cell + "/t");
+                cell = row.getCell(j).toString();
 
-			}
+                System.out.print(cell + "/t");
 
-			System.out.println("");
+            }
 
-		}
+            System.out.println("");
 
-	}
+        }
 
-	public static void main(String[] args) {
-		//
-		ReadExcel readExcel = new ReadExcel();
+    }
 
-		readExcel.loadXlsx("D://temp//ewq.xlsx");
+    public static void main(String[] args) {
+        //
+        ReadExcel readExcel = new ReadExcel();
 
-	}
+        readExcel.loadXlsx("D://temp//ewq.xlsx");
+
+    }
 
 }

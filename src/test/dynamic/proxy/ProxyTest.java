@@ -3,13 +3,13 @@ package test.dynamic.proxy;
 import org.junit.Test;
 
 /**
+ * @author zhongqiang.qiu
+ * @version V1.0
  * @Title: ProxyTest.java
  * @Package test.dynamic.proxy
  * @Description:动态代理测试类
- * @author zhongqiang.qiu
  * @Company www.viewhigh.com
  * @date 2016年6月27日 上午11:24:23
- * @version V1.0
  */
 public class ProxyTest {
 
